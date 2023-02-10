@@ -33,6 +33,7 @@ void car::start() //if stopped, start the car.
     if(on)
     {
         on = false;
+        speed = 0; 
     }
     else
     {
