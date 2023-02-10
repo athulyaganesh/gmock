@@ -1,5 +1,5 @@
-#include "gtest.h"
-#include "gmock.h"
+#include "googletest/include/gtest.h"
+#include <gmock.h>
 #include "car.h"
 #include "mockcar.h"
 #include "testdrive.h" 
