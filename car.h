@@ -5,15 +5,20 @@
 class car
 {
     private:
-         bool start; // True indicates car engine is on, else off. 
-         bool fuel; // True indicates more than half the fuel tank is full
-         bool motion; // if True, car is moving, else stopped.   
+         bool on; // True indicates car engine is on, else off. 
+         bool motion; // if True, car is moving, else stopped.  
+         int speed;  //speed of car in mph 
     public:
         car();
-        car(bool start, bool fuel, bool motion);
-        void start();
-        void stop();
-        void accelerate();
-        void decelrate(); 
-        void horn();   
+        car(bool start, int speed, bool motion);
+        virtual void setOnStatus();
+        virtual void setMotionStatus();
+        virtual void setSpeed(int x);
+        virtual bool getOnStatus();
+        virtual bool getMotionStatus();
+        virtual int getSpeed();
+        virtual void start(); //if stopped, start the car.
+        virtual void stop(); //if started, stop the car.
+        virtual void accelerate(int x); //if started, accelerate the car by x mph.
+        virtual void decelrate(int x);  //if started, decelerate the car by x mph. 
 }; 

@@ -28,7 +28,7 @@ void car::start() //if stopped, start the car.
 
 }
 
-void car::stop() //if started, stop the car.
+ void car::stop() //if started, stop the car.
 {
     if(on)
     {
@@ -53,4 +53,28 @@ void car::decelrate(int x) //if started, decelerate the car by x mph.
     {
         cout<<"Not possible!"<<endl; 
     }
+}
+void car::setOnStatus()
+{
+    on = true; 
+}
+void car::setMotionStatus()
+{
+    motion = true; 
+}
+void car::setSpeed(int x)
+{
+    speed = x; 
+}
+bool car:: getOnStatus()
+{
+    return on; 
+}
+bool car::getMotionStatus()
+{
+    return motion;
+}
+int car:: getSpeed()
+{
+    return speed;
 }
