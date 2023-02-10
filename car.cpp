@@ -42,7 +42,10 @@ void car::start() //if stopped, start the car.
 }
 void car::accelerate(int x)//if started, accelerate the car by x mph.
 {
-    motion =+ x; 
+    if(on)
+    {
+        motion =+ x; 
+    }
 }
 void car::decelrate(int x) //if started, decelerate the car by x mph. 
 {

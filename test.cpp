@@ -2,6 +2,7 @@
 #include "gmock.h"
 #include "car.h"
 #include "mockcar.h"
+#include "testdrive.h" 
 
 using ::testing::InSequence;
 using ::testing::Return;
@@ -33,17 +34,26 @@ TEST(SomeTestCaseName, SomeTestName) {
     mock.SomeMethod();
 
 }*/
+/*
+create a mock car object, call the getOnStatus at least once. This Should return true; 
+*/
 TEST(CarOn, CarWorks)
 {
     mockcar car; 
-    EXPECT_CALL(car, setOnStatus()); // UMMM....????
-    car.setOnStatus(); 
-
+    EXPECT_CALL(car, getOnStatus()).Times(AtLeast(1)); 
+    
+    testdrive td(&car); 
+    EXPECT_TRUE(td.isOn()); 
 }
+/*
+create mockcar object,  call the stop object atleast once. If speed equals 0, passes the test case. 
 
-TEST(CarAccelerates, CarGoesVroom)
+*/
+TEST(CarStopped, CarNoGoesVroom)
 {
     mockcar car; 
-    EXPECT_CALL(car, accelerate(5)); // UMMM....??? PART 2
-    car.accelerate(5); 
+    EXPECT_CALL(car, stop()).Times(AtLeast(1));
+   
+   testdrive td(&car); 
+   EXPECT_EQ(td.Stop(),0); 
 }

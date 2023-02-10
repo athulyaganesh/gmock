@@ -5,7 +5,7 @@
 class car
 {
     private:
-         bool on; // True indicates car engine is on, else off. 
+         bool on=true; // True indicates car engine is on, else off. 
          bool motion; // if True, car is moving, else stopped.  
          int speed;  //speed of car in mph 
     public:
