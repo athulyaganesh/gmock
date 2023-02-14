@@ -8,12 +8,31 @@ class testdrive
     public:
         testdrive(car* Car):Car(Car){}
     
-        bool isOn()
+        int isOn()
         {
-            return Car->getOnStatus(); 
+            if(Car->getOnStatus())
+            {
+                Car->accelerate(5); 
+            }
+            else 
+            {
+                Car->setOnStatus(); 
+            }
+
+            return Car->getSpeed(); 
+            
         }
+
         int Stop()
         {
+            if(!Car->getOnStatus())
+            {
+                Car->setSpeed(0);
+            }
+            else 
+            {
+                Car->decelrate(5);
+            }
             return Car->getSpeed(); 
         }
-};
+}; 

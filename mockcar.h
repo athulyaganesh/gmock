@@ -1,7 +1,7 @@
 #pragma once 
 
 #include "car.h"
-#include "gmock/gmock.h"
+#include "gmock.h"
 #include <iostream>
 
 using namespace std; 
@@ -21,3 +21,4 @@ class mockcar:public car
         MOCK_METHOD(void, decelerate, (int x));
 
 };
+

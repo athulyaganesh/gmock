@@ -1,5 +1,7 @@
-#include "googletest/include/gtest.h"
-#include <gmock.h>
+#pragma once
+
+#include "gtest"
+#include "gmock"
 #include "car.h"
 #include "mockcar.h"
 #include "testdrive.h" 
@@ -43,7 +45,7 @@ TEST(CarOn, CarWorks)
     EXPECT_CALL(car, getOnStatus()).Times(AtLeast(1)); 
     
     testdrive td(&car); 
-    EXPECT_TRUE(td.isOn()); 
+    EXPECT_EQ(td.isOn(),5); 
 }
 /*
 create mockcar object,  call the stop object atleast once. If speed equals 0, passes the test case. 
